@@ -28,8 +28,8 @@ const HomePage = () => {
                         transitionDuration={800}
                         playOnce={false}
                     >
-                        <p className='text-white cursor-default text-xs p-3'>
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa, explicabo
+                        <p className='cursor-default text-xs p-3 leading-snug text-zinc-300'>
+                            We are the No #1 Software Development Company in UAE, to fulfill your needs
                         </p>
                     </GlareHover>
                 </div>
@@ -46,7 +46,7 @@ const HomePage = () => {
                     rootMargin="-100px"
                     textAlign="center"
                 />
-                <ShinyText text="Web App, Application, UI/UX" disabled={false} speed={3} className='mt-6' />
+                <ShinyText text="Web App, Application, UI/UX" disabled={false} speed={3} className='mt-6 z-10' />
             </div>
 
         </WrapperLayout>
