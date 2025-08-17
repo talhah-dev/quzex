@@ -8,7 +8,7 @@ import React from 'react'
 const HomePage = () => {
     return (
         <WrapperLayout className='relative '>
-            <iframe src='https://my.spline.design/thresholddarkambientuicopy-TdFiRssh4jmmRXTHTQPp1U0N/' className="w-full absolute top-0 left-0 h-dvh bg-black -z-10"></iframe>
+            <iframe src='https://my.spline.design/thresholddarkambientuicopy-TdFiRssh4jmmRXTHTQPp1U0N/' className="w-full absolute top-0 left-0 h-dvh bg-black"></iframe>
             <div className="absolute md:bottom-8 bottom-2 left-5">
                 <CircularText
                     text="FULL STACK DEVELOPMENT "
@@ -18,7 +18,7 @@ const HomePage = () => {
                 />
             </div>
             <div className="h-dvh  w-full flex items-center justify-center flex-col">
-                <div className='absolute bottom-1 cursor-default right-3 h-20'>
+                <div className='absolute bottom-4 cursor-default right-5 h-20'>
                     <GlareHover
                         glareColor="#ffffff"
                         glareOpacity={0.3}
