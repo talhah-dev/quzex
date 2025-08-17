@@ -7,7 +7,7 @@ import React from 'react'
 
 const HomePage = () => {
     return (
-        <WrapperLayout className='relative'>
+        <WrapperLayout className='relative '>
             <iframe src='https://my.spline.design/thresholddarkambientuicopy-TdFiRssh4jmmRXTHTQPp1U0N/' className="w-full absolute top-0 left-0 h-screen -z-10"></iframe>
             <div className="absolute md:bottom-8 bottom-2 left-5">
                 <CircularText
@@ -17,11 +17,10 @@ const HomePage = () => {
                     className="font-normal"
                 />
             </div>
-            <div className="min-h-screen w-full flex items-center justify-center flex-col">
+            <div className="min-h-screen bg-black w-full flex items-center justify-center flex-col">
                 <div className='absolute bottom-1 cursor-default right-3 h-20'>
                     <GlareHover
                         glareColor="#ffffff"
-                        className='bg-red-600'
                         glareOpacity={0.3}
                         glareAngle={-30}
                         glareSize={300}
