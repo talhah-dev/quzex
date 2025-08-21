@@ -167,14 +167,13 @@ const CardNav: React.FC<CardNavProps> = ({
     >
       <nav
         ref={navRef}
-        className={`card-nav ${isExpanded ? "open" : ""} block h-[60px] p-0 rounded-xl shadow-md relative overflow-hidden bg-[#1e1e1e] border border-zinc-700/50 will-change-[height]`}
+        className={`card-nav ${isExpanded ? "open" : ""} block h-[60px] p-0 rounded-xl shadow-md relative overflow-hidden bg-[#060010]/90 border border-zinc-700/40 will-change-[height]`}
 
       >
         <div className="card-nav-top absolute inset-x-0 top-0 h-[60px] flex items-center justify-between p-2 px-[1.1rem] z-[2]">
 
           <div className="logo-container flex items-center">
-            <Image src={logo} alt={logoAlt} width={40} height={40} className="logo h-9 w-9" />
-            <span className="text-white font-semibold text-xl tracking-wide">QUZEX</span>
+            <Image src={logo} alt={logoAlt} width={80} height={40} className="logo w-auto h-9" />
           </div>
           <div
             className={`hamburger-menu ${isHamburgerOpen ? "open" : ""} group h-full flex flex-col items-center justify-center cursor-pointer gap-[6px] order-2 md:order-none`}

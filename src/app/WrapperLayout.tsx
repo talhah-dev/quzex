@@ -1,18 +1,40 @@
+"use client";
 import Navbar from '@/components/Navbar';
-import React, { ReactNode } from 'react'
+import React, { ReactNode, useEffect } from 'react';
+import Lenis from 'lenis';
+import ClickSpark from '@/components/Reactbit/ClickSpark/ClickSpark';
 
 interface WrapperProps {
     children: ReactNode;
-    className?: string
+    className?: string;
 }
 
 const WrapperLayout = ({ children, className }: WrapperProps) => {
+    useEffect(() => {
+        const lenis = new Lenis({
+            autoRaf: true,
+        });
+
+        // cleanup on unmount
+        return () => {
+            lenis.destroy();
+        };
+    }, []);
+
     return (
         <div className={className}>
-            <Navbar />
-            {children}
+            <ClickSpark
+                sparkColor='#fff'
+                sparkSize={10}
+                sparkRadius={15}
+                sparkCount={8}
+                duration={400}
+            >
+                <Navbar />
+                {children}
+            </ClickSpark>
         </div>
-    )
-}
+    );
+};
 
-export default WrapperLayout
+export default WrapperLayout;
