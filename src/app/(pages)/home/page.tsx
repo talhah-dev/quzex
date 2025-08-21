@@ -10,8 +10,6 @@ import { useInView } from 'motion/react';
 import { AnimatedNumberInView } from '@/components/Counter';
 import { Button } from '@/components/ui/button';
 import Magnet from '@/components/Reactbit/Magnet/Magnet';
-import RotatingText from '@/components/Reactbit/RotatingText/RotatingText';
-import ScrollReveal from '@/components/Reactbit/ScrollReveal/ScrollReveal';
 import Image from 'next/image';
 import Link from 'next/link';
 import TiltedCard from '@/components/Reactbit/TiltedCard/TiltedCard';

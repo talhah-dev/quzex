@@ -1,7 +1,7 @@
 'use client';
 import { useInView } from 'motion/react';
 import { useRef, useState, useEffect } from 'react';
-import { AnimatedNumber } from '../../components/motion-primitives/animated-number';
+import { AnimatedNumber } from './motion-primitives/animated-number';
 
 export function AnimatedNumberInView() {
     const targets = [200, 600, 192, 500];
