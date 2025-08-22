@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar';
 import React, { ReactNode, useEffect } from 'react';
 import Lenis from 'lenis';
 import ClickSpark from '@/components/Reactbit/ClickSpark/ClickSpark';
+import Cookies from '@/components/Cookies';
 
 interface WrapperProps {
     children: ReactNode;
@@ -31,6 +32,7 @@ const WrapperLayout = ({ children, className }: WrapperProps) => {
                 duration={400}
             >
                 <Navbar />
+                <Cookies />
                 {children}
             </ClickSpark>
         </div>

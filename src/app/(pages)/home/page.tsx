@@ -14,6 +14,43 @@ import Image from 'next/image';
 import Link from 'next/link';
 import TiltedCard from '@/components/Reactbit/TiltedCard/TiltedCard';
 import InfiniteLogo from '@/components/InfiniteLogo';
+import AnimatedContent from '@/components/Reactbit/AnimatedContent/AnimatedContent';
+import MagicBento from '@/components/Reactbit/MagicBento/MagicBento';
+import CircularGallery from '@/components/Reactbit/CircularGallery/CircularGallery';
+import RotatingText from '@/components/Reactbit/RotatingText/RotatingText';
+import InfiniteMenu from '@/components/Reactbit/InfiniteMenu/InfiniteMenu';
+import Cookies from '@/components/Cookies';
+import One from '@/components/Integrations/One';
+import Two from '@/components/Integrations/Two';
+import Three from '@/components/Integrations/Three';
+import Four from '@/components/Integrations/Four';
+
+const items = [
+    {
+        image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        link: 'https://google.com/',
+        title: 'Healthcare',
+        description: 'This is pretty cool, right?'
+    },
+    {
+        image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        link: 'https://google.com/',
+        title: 'Eduction',
+        description: 'This is pretty cool, right?'
+    },
+    {
+        image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        link: 'https://google.com/',
+        title: 'Gym',
+        description: 'This is pretty cool, right?'
+    },
+    {
+        image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        link: 'https://google.com/',
+        title: 'Sports',
+        description: 'This is pretty cool, right?'
+    }
+];
 
 const HomePage = () => {
     const [value, setValue] = useState(0);
@@ -91,73 +128,47 @@ const HomePage = () => {
 
             </div>
 
-
             <div className="max-w-7xl gap-20 w-full md:px-12 p-4 mx-auto flex items-center justify-center md:mt-16 mt-10">
                 <AnimatedNumberInView />
             </div>
-            <section className="md:mt-24 mt-10">
+            <section className="md:mt-16 mt-10">
                 <div className="mx-auto max-w-7xl space-y-8 p-5 md:px-12 md:space-y-16">
-                    <h2 className="relative z-10 max-w-2xl text-3xl font-medium leading-tight text-zinc-800 lg:text-5xl">Development Company in UAE, to fulfill your needs</h2>
+                    <AnimatedContent>
+                        <h2 className="relative z-10 max-w-2xl text-3xl font-medium leading-tight text-zinc-800 lg:text-5xl">Development Company in UAE, to fulfill your needs</h2>
+                    </AnimatedContent>
                     <div className="grid gap-4 sm:grid-cols-2 md:gap-12">
                         <div className="relative mb-6 sm:mb-0">
                             <div className="bg-linear -to-b aspect-76/59 relative rounded-2xl from-zinc-300 to-transparent">
-                                <Image src="https://images.unsplash.com/photo-1703969083653-da62f9ea70af?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="rounded-[15px] w-full md:h-96 h-64 object-cover shadow " alt="payments illustration light" width={1207} height={600} />
+                                <AnimatedContent>
+                                    <Image src="https://images.unsplash.com/photo-1531973576160-7125cd663d86?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="rounded-[15px] w-full md:h-96 h-64 object-cover shadow " alt="payments illustration light" width={1207} height={600} />
+                                </AnimatedContent>
                             </div>
                         </div>
 
-                        <div className="relative space-y-4">
-                            <p className="text-zinc-600">
-                                We have become the top-notch software development services provider primarily due to our years of experience, creative solutions, and dedication to quality. Our team of creative, offshore developers and designers turns concepts into reality.
-                            </p>
-                            <p className="text-zinc-600">Quzex understands that every business is unique. We serve them with innovative solutions that help them overcome business challenges.</p>
+                        <AnimatedContent>
+                            <div className="relative space-y-4">
+                                <p className="text-zinc-600">
+                                    We have become the top-notch software development services provider primarily due to our years of experience, creative solutions, and dedication to quality. Our team of creative, offshore developers and designers turns concepts into reality.
+                                </p>
+                                <p className="text-zinc-600">Quzex understands that every business is unique. We serve them with innovative solutions that help them overcome business challenges.</p>
 
-                            <div className="pt-6 text-zinc-600">
-                                <blockquote className="border-l-4 pl-4">
-                                    <p>Our goal is to give businesses peace of mind and allow them to concentrate on their primary business operations by offering continuous support and maintenance.</p>
+                                <div className="pt-6 text-zinc-600">
+                                    <blockquote className="border-l-4 pl-4">
+                                        <p>Our goal is to give businesses peace of mind and allow them to concentrate on their primary business operations by offering continuous support and maintenance.</p>
 
-                                    <div className="mt-6 space-y-1">
-                                        <cite className="block font-medium">Muhammad Talha, CEO</cite>
-                                        <Image className="h-8 w-fit invert opacity-50" src="/quzex.png" alt="Quzex" height="30" width="500" />
-                                    </div>
-                                </blockquote>
+                                        <div className="mt-6 space-y-1">
+                                            <cite className="block font-medium">Muhammad Talha, CEO</cite>
+                                            <Image className="h-8 w-fit invert opacity-50" src="/quzex.png" alt="Quzex" height="30" width="500" />
+                                        </div>
+                                    </blockquote>
+                                </div>
                             </div>
-                        </div>
+                        </AnimatedContent>
                     </div>
                 </div>
             </section>
 
-            {/* <div className="flex items-center md:px-12 justify-between max-w-7xl w-full px-4 mx-auto md:mt-32 mt-10 md:gap-12 gap-6 md:flex-row flex-col">
-                <div className="md:w-[55%] w-full flex flex-col">
-                    <div className="flex text-white md:flex-row flex-col font-semibold md:text-5xl text-5xl gap-3 md:items-center items-start">
-                        <h2 className='text-nowrap'>We Provided</h2>
-                        <RotatingText
-                            texts={['Growth', 'Excellence', 'Quality', 'solutions', 'Support']}
-                            mainClassName="px-2 transition-all duration-500 sm:px-2 md:px-3 bg-[#5227ff] text-white overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
-                            staggerFrom={"last"}
-                            initial={{ y: "100%" }}
-                            animate={{ y: 0 }}
-                            exit={{ y: "-120%" }}
-                            staggerDuration={0.025}
-                            splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
-                            transition={{ type: "spring", damping: 30, stiffness: 400 }}
-                            rotationInterval={2000}
-                        />
-                    </div>
-                    <p className='text-zinc-300 mt-5'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore cumque aliquid neque commodi rem nemo alias quidem rerum soluta iste ex optio sit, repudiandae voluptatem vitae? Illum harum saepe eos? Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br /><br /> Rem repudiandae ratione facilis exercitationem quis tempora nobis aspernatur sequi dolorum, quos quidem magni recusandae, commodi vero hic repellendus sint atque dignissimos?</p>
-                    <div className="mt-5">
-                        <Link href="#" className=" cursor-pointer">
-                            <Magnet padding={50} disabled={false} magnetStrength={5}>
-                                <Button className='bg-white cursor-pointer hover:opacity-80 hover:!bg-white text-black'>View Work</Button>
-                            </Magnet>
-                        </Link>
-                    </div>
-                </div>
-                <div className="md:w-[45%] w-full">
-                    <Image src={"/images/img1.jpg"} alt='image' width={500} height={600} className='rounded-xl -scale-x-100 object-cover md:h-[26rem] object-right w-full' />
-                </div>
-            </div> */}
-
-            <section className='max-w-7xl w-full  mx-auto p-5 md:px-12 md:mt-20 mt-10'>
+            <section className='max-w-7xl w-full  mx-auto p-5 md:px-12 md:mt-16 mt-10'>
                 <h2 className='text-center font-medium text-zinc-800 md:text-5xl text-4xl'>Our Services</h2>
                 <p className='text-center max-w-3xl mx-auto text-zinc-600 mt-3'> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos earum dolorum repellendus doloremque minima alias delectus optio aliquam iste labore!</p>
                 <div className=' grid md:mt-16 mt-10 gap-y-14 gap-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 '>
@@ -229,7 +240,7 @@ const HomePage = () => {
                             showTooltip={true}
                             displayOverlayContent={true}
                             overlayContent={
-                                <p className="bg-zinc-800 px-2 py-1 mt-4 ml-4 !rounded-lg text-[15px]">
+                                <p className="bg-white px-2 py-1 mt-4 ml-4 !rounded-lg text-[15px]">
                                     UI/UX Design
                                 </p>
                             }
@@ -250,10 +261,65 @@ const HomePage = () => {
                 </div>
             </section>
 
+            {/* <div style={{ height: '600px', position: 'relative' }}>
+                <CircularGallery bend={3} textColor="#000" borderRadius={0.05} scrollEase={0.02} />
+            </div> */}
+
             <div className="md:mt-20 mt-10">
                 <InfiniteLogo />
             </div>
 
+            <div className="flex items-center md:px-12 justify-between max-w-7xl w-full px-4 mx-auto md:mt-24 mt-10 md:gap-12 gap-6 md:flex-row flex-col">
+                <div className="md:w-[55%] w-full flex flex-col">
+                    <div className="flex text-zinc-800 md:flex-row flex-col font-medium md:text-5xl text-4xl gap-3 md:items-center items-start">
+                        <h2 className='text-nowrap'>We Provided</h2>
+                        <RotatingText
+                            texts={['Growth', 'Excellence', 'Quality', 'solutions', 'Support']}
+                            mainClassName="px-2 transition-all duration-500 sm:px-2 md:px-3 bg-[#000] text-white overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
+                            staggerFrom={"last"}
+                            initial={{ y: "100%" }}
+                            animate={{ y: 0 }}
+                            exit={{ y: "-120%" }}
+                            staggerDuration={0.025}
+                            splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+                            transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                            rotationInterval={2000}
+                        />
+                    </div>
+                    <p className='text-zinc-600 mt-5'>
+                        At our full-stack development company, we deliver more than just code —
+                        we provide end-to-end solutions that drive <span className="font-semibold">growth</span>,
+                        ensure <span className="font-semibold">quality</span>, and create long-term <span className="font-semibold">value  </span>
+                        for our clients. From building modern web applications to deploying secure
+                        cloud infrastructure, we focus on scalable and reliable results. <br /><br />
+                        Every project is approached with a commitment to <span className="font-semibold">excellence</span>,
+                        transparent communication, and ongoing <span className="font-semibold">support</span> —
+                        helping businesses of all sizes turn their ideas into impactful digital products.
+                    </p>
+
+                    <div className="mt-5">
+                        <Link href="#" className=" cursor-pointer">
+                            <Magnet padding={50} disabled={false} magnetStrength={5}>
+                                <Button>View Work</Button>
+                            </Magnet>
+                        </Link>
+                    </div>
+                </div>
+                <div className="md:w-[45%] w-full">
+                    <Image src={"https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"} alt='image' width={500} height={600} className='rounded-xl -scale -x-100 object-cover md:h-[26rem] object-right w-full' />
+                </div>
+            </div>
+
+            {/* <div style={{ height: '100vh', position: 'relative' }}>
+                <InfiniteMenu items={items} />
+            </div> */}
+
+            <div className="max-w-7xl grid md:grid-cols-2 grid-cols-1 w-full mx-auto md:mt-20 mt-10 pp-5 md:px-12">
+                <Three />
+                <Two />
+                <One />
+                <Four />
+            </div>
 
         </WrapperLayout>
     )
