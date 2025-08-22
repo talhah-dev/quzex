@@ -299,7 +299,7 @@ export const LogoLoop = React.memo<LogoLoopProps>(
         const content = isNodeItem ? (
           <span
             className={cx(
-              "inline-flex invert items-center",
+              "inline-flex brightness-0 opacity-50 items-center",
               "motion-reduce:transition-none",
               scaleOnHover &&
                 "transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/item:scale-120"

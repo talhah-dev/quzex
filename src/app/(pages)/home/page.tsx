@@ -24,10 +24,10 @@ const HomePage = () => {
         setValue(10000);
     }
     return (
-        <WrapperLayout className='relative bg-[#060010] pb-20'>
+        <WrapperLayout className='relative pb-20'>
             <div className="h-dvh overflow-hidden relative w-full flex items-center justify-center flex-col">
                 <div className="w-full absolute top-0 left-0 h-dvh">
-                    <div style={{ width: '100%', height: '600px', position: 'relative' }}>
+                    <div style={{ width: '100%', height: '100vh', position: 'relative' }}>
                         <LightRays
                             raysOrigin="top-center"
                             raysColor="#fff"
@@ -42,7 +42,7 @@ const HomePage = () => {
                         />
                     </div>
                 </div>
-                <div className="absolute md:bottom-5 bottom-2 right-5">
+                <div className="absolute md:bottom-5 bottom-5 right-5">
                     <CircularText
                         text="FULL STACK DEVELOPMENT "
                         onHover="speedUp"
@@ -50,13 +50,13 @@ const HomePage = () => {
                         className="font-normal"
                     />
                 </div>
-                <p className='glass px-3 pb-1 pt-0.5 flex items-center gap-1 mb-5 text-white text-sm '>
+                <p className='glass px-3 pb-1 pt-0.5 flex items-center gap-1 mb-5 text-zinc-900 text-sm '>
                     <Stars size={15} />
                     Top Companay
                 </p>
                 <SplitText
                     text="Welcome To"
-                    className="md:text-5xl text-3xl mb-2 md:mb-0 tracking-widest text-center text-white"
+                    className="md:text-5xl text-3xl mb-2 md:mb-0 tracking-widest text-center text-black"
                     delay={100}
                     duration={0.6}
                     ease="power3.out"
@@ -69,7 +69,7 @@ const HomePage = () => {
                 />
                 <SplitText
                     text="QUZEX"
-                    className="md:text-9xl text-7xl tracking-widest text-center text-white"
+                    className="md:text-9xl text-7xl tracking-widest text-center text-black"
                     delay={100}
                     duration={0.6}
                     ease="power3.out"
@@ -80,13 +80,13 @@ const HomePage = () => {
                     rootMargin="-100px"
                     textAlign="center"
                 />
-                <ShinyText text="We have become the top-notch software development services provider primarily due to our years of experience, creative solutions, and dedication to quality." disabled={false} speed={3} className='max-w-3xl mx-auto text-center mt-6 z-10 text-lg' />
+                <p className='max-w-3xl mx-auto text-center mt-6 z-10 text-lg text-zinc-700'>We have become the top-notch software development services provider primarily due to our years of experience, creative solutions, and dedication to quality.</p>
 
                 <div className="flex items-center gap-2 mt-5">
                     <Magnet padding={50} disabled={false} magnetStrength={10}>
-                        <Button className='bg-white hover:opacity-80 hover:!bg-white text-black'>Get Started</Button>
+                        <Button className=''>Get Started</Button>
                     </Magnet>
-                    <Button className='bg-transparent text-white border border-zinc-200'>Learn More</Button>
+                    <Button className='bg-transparent text-black border border-zinc-300'>Learn More</Button>
                 </div>
 
             </div>
@@ -95,29 +95,29 @@ const HomePage = () => {
             <div className="max-w-7xl gap-20 w-full md:px-12 p-4 mx-auto flex items-center justify-center md:mt-16 mt-10">
                 <AnimatedNumberInView />
             </div>
-            <section className="md:mt-28 mt-10">
+            <section className="md:mt-24 mt-10">
                 <div className="mx-auto max-w-7xl space-y-8 p-5 md:px-12 md:space-y-16">
-                    <h2 className="relative z-10 max-w-2xl text-4xl font-medium leading-tight text-white lg:text-5xl">Development Company in UAE, to fulfill your needs</h2>
-                    <div className="grid gap-6 sm:grid-cols-2 md:gap-12 lg:gap-24">
+                    <h2 className="relative z-10 max-w-2xl text-3xl font-medium leading-tight text-zinc-800 lg:text-5xl">Development Company in UAE, to fulfill your needs</h2>
+                    <div className="grid gap-4 sm:grid-cols-2 md:gap-12">
                         <div className="relative mb-6 sm:mb-0">
-                            <div className="bg-linear -to-b aspect-76/59 relative rounded-2xl from-zinc-300 to-transparent p-px ">
-                                <Image src="https://images.unsplash.com/photo-1703969083653-da62f9ea70af?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="rounded-[15px] shadow " alt="payments illustration light" width={1207} height={929} />
+                            <div className="bg-linear -to-b aspect-76/59 relative rounded-2xl from-zinc-300 to-transparent">
+                                <Image src="https://images.unsplash.com/photo-1703969083653-da62f9ea70af?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className="rounded-[15px] w-full md:h-96 h-64 object-cover shadow " alt="payments illustration light" width={1207} height={600} />
                             </div>
                         </div>
 
                         <div className="relative space-y-4">
-                            <p className="text-white">
-                                Gemini is evolving to be more than just the models. <span className="font-bold">It supports an entire ecosystem</span> — from products innovate.
+                            <p className="text-zinc-600">
+                                We have become the top-notch software development services provider primarily due to our years of experience, creative solutions, and dedication to quality. Our team of creative, offshore developers and designers turns concepts into reality.
                             </p>
-                            <p className="text-white">It supports an entire ecosystem — from products to the APIs and platforms helping developers and businesses innovate</p>
+                            <p className="text-zinc-600">Quzex understands that every business is unique. We serve them with innovative solutions that help them overcome business challenges.</p>
 
-                            <div className="pt-6 text-white">
+                            <div className="pt-6 text-zinc-600">
                                 <blockquote className="border-l-4 pl-4">
-                                    <p>Using TailsUI has been like unlocking a secret design superpower. Its the perfect fusion of simplicity and versatility, enabling us to create UIs that are as stunning as they are user-friendly.</p>
+                                    <p>Our goal is to give businesses peace of mind and allow them to concentrate on their primary business operations by offering continuous support and maintenance.</p>
 
-                                    <div className="mt-6 space-y-3">
-                                        <cite className="block font-medium">John Doe, CEO</cite>
-                                        <Image className="h-5 w-fit dark:invert" src="https://html.tailus.io/blocks/customers/nvidia.svg" alt="Nvidia Logo" height="20" width="500" />
+                                    <div className="mt-6 space-y-1">
+                                        <cite className="block font-medium">Muhammad Talha, CEO</cite>
+                                        <Image className="h-8 w-fit invert opacity-50" src="/quzex.png" alt="Quzex" height="30" width="500" />
                                     </div>
                                 </blockquote>
                             </div>
@@ -158,9 +158,9 @@ const HomePage = () => {
             </div> */}
 
             <section className='max-w-7xl w-full  mx-auto p-5 md:px-12 md:mt-20 mt-10'>
-                <h2 className='text-center font-medium text-white text-5xl'>Our Services</h2>
-                <p className='text-center max-w-3xl mx-auto text-zinc-300 mt-3'> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos earum dolorum repellendus doloremque minima alias delectus optio aliquam iste labore!</p>
-                <div className=' grid md:mt-16 mt-10 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 '>
+                <h2 className='text-center font-medium text-zinc-800 md:text-5xl text-4xl'>Our Services</h2>
+                <p className='text-center max-w-3xl mx-auto text-zinc-600 mt-3'> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos earum dolorum repellendus doloremque minima alias delectus optio aliquam iste labore!</p>
+                <div className=' grid md:mt-16 mt-10 gap-y-14 gap-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 '>
                     <div className="">
 
                         <TiltedCard
@@ -182,9 +182,9 @@ const HomePage = () => {
                                 </p>
                             }
                         />
-                        <div className="px-5">
-                            <h2 className='text-white mt-4 font-medium text-2xl'>Web Design</h2>
-                            <p className='text-zinc-400 mt-1 line-clamp-3'>Whether you want to build a new website from scratch or redesign an old one, we customize our strategy to fit your particular requirements and objectives. We develop interactive websites by blending innovative designs with functionality. Our team ensures that every minor detail aligns with your brand and company. Elevate your online presence with our custom web design services.                            </p>
+                        <div className="md:px-5 px-2">
+                            <h2 className='text-zinc-800 mt-4 font-medium text-2xl'>Web Design</h2>
+                            <p className='text-zinc-600 mt-1 line-clamp-3'>Whether you want to build a new website from scratch or redesign an old one, we customize our strategy to fit your particular requirements and objectives. We develop interactive websites by blending innovative designs with functionality. Our team ensures that every minor detail aligns with your brand and company. Elevate your online presence with our custom web design services.                            </p>
                         </div>
                     </div>
                     <div className="">
@@ -208,9 +208,9 @@ const HomePage = () => {
                                 </p>
                             }
                         />
-                        <div className="px-5">
-                            <h2 className='text-white mt-4 font-medium text-2xl'>Web Application</h2>
-                            <p className='text-zinc-400 mt-1 line-clamp-3'>From e-commerce platforms to sophisticated enterprise solutions, we ensure that our web app development services are robust, responsive, and aligned with your strategic objectives. With a focus on innovation and quality, StiffTech Solutions transforms your vision into a powerful web presence that stands out in the digital landscape. </p>
+                        <div className="md:px-5 px-2">
+                            <h2 className='text-zinc-800 mt-4 font-medium text-2xl'>Web Application</h2>
+                            <p className='text-zinc-600 mt-1 line-clamp-3'>From e-commerce platforms to sophisticated enterprise solutions, we ensure that our web app development services are robust, responsive, and aligned with your strategic objectives. With a focus on innovation and quality, StiffTech Solutions transforms your vision into a powerful web presence that stands out in the digital landscape. </p>
                         </div>
                     </div>
                     <div className="">
@@ -229,19 +229,19 @@ const HomePage = () => {
                             showTooltip={true}
                             displayOverlayContent={true}
                             overlayContent={
-                                <p className="bg-white px-2 py-1 mt-4 ml-4 !rounded-lg text-[15px]">
+                                <p className="bg-zinc-800 px-2 py-1 mt-4 ml-4 !rounded-lg text-[15px]">
                                     UI/UX Design
                                 </p>
                             }
                         />
-                        <div className="px-5">
-                            <h2 className='text-white mt-4 font-medium text-2xl'>UI/UX Design</h2>
-                            <p className='text-zinc-400 mt-1 line-clamp-3'>We use the latest technologies to guarantee smooth and captivating user experiences for your business platforms. With our top-notch UI/UX design services, discover the ideal balance between simple and appealing platforms.                            </p>
+                        <div className="md:px-5 px-2">
+                            <h2 className='text-zinc-800 mt-4 font-medium text-2xl'>UI/UX Design</h2>
+                            <p className='text-zinc-600 mt-1 line-clamp-3'>We use the latest technologies to guarantee smooth and captivating user experiences for your business platforms. With our top-notch UI/UX design services, discover the ideal balance between simple and appealing platforms.                            </p>
                         </div>
                     </div>
                 </div>
-                <div className="flex items-center justify-center md:mt-16 mt-6">
-                    <Magnet padding={50} disabled={false} magnetStrength={2} className='text-white '>
+                <div className="flex items-center justify-center md:mt-16 mt-10">
+                    <Magnet padding={50} disabled={false} magnetStrength={2} className='text-zinc-800 '>
                         <Link href="#" className="flex cursor-pointer  items-center gap-2">
                             View All Services
                             <ArrowRight />

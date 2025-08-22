@@ -102,7 +102,7 @@ const CircularText: React.FC<CircularTextProps> = ({
 
   return (
     <motion.div
-    className={`m-0 mx-auto rounded-full w-[90px] h-[90px] relative font-black text-white text-center cursor-pointer origin-center ${className}`}
+    className={`m-0 mx-auto rounded-full w-[90px] h-[90px] relative font-black text-zinc-800 text-center cursor-pointer origin-center ${className}`}
     style={{ rotate: rotation }}
       initial={{ rotate: 0 }}
       animate={controls}

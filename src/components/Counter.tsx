@@ -5,7 +5,7 @@ import { AnimatedNumber } from './motion-primitives/animated-number';
 
 export function AnimatedNumberInView() {
     const targets = [200, 600, 192, 500];
-    const labels = ["Projects Completed", "Happy Clients", "Active Users", "SaaS Deliveries"];
+    const labels = ["Achievements", "Happy Clients", "Active Users", "SaaS Deliveries"];
     const [values, setValues] = useState(targets.map(() => 0));
     const ref = useRef<HTMLDivElement | null>(null);
     const isInView = useInView(ref);
@@ -29,14 +29,14 @@ export function AnimatedNumberInView() {
                 {values.map((val, i) => (
                     <div key={i} className="flex flex-col items-center text-center">
                         <AnimatedNumber
-                            className='inline-flex text-5xl font-medium text-zinc-300'
+                            className='inline-flex text-5xl font-medium text-zinc-800'
                             springOptions={{
                                 bounce: 0,
                                 duration: 3000, // duration in ms
                             }}
                             value={val}
                         />
-                        <p className="mt-2 text-lg text-zinc-400">{labels[i]}</p>
+                        <p className="mt-2 text-lg text-zinc-600">{labels[i]}</p>
                     </div>
                 ))}
             </div>

@@ -7,8 +7,8 @@ const Navbar = () => {
   const items = [
     {
       label: "About",
-      bgColor: "#0D0716",
-      textColor: "#fff",
+      bgColor: "#f6f6f6",
+      textColor: "#000",
       links: [
         { label: "Company", ariaLabel: "About Company", href: "/about/company" },
         { label: "Careers", ariaLabel: "About Careers", href: "/about/careers" },
@@ -16,8 +16,8 @@ const Navbar = () => {
     },
     {
       label: "Projects",
-      bgColor: "#170D27",
-      textColor: "#fff",
+      bgColor: "#f1f1f1",
+      textColor: "#000",
       links: [
         { label: "Featured", ariaLabel: "Featured Projects", href: "/projects/featured" },
         { label: "Case Studies", ariaLabel: "Project Case Studies", href: "/projects/case-studies" },
@@ -25,8 +25,8 @@ const Navbar = () => {
     },
     {
       label: "Contact",
-      bgColor: "#271E37",
-      textColor: "#fff",
+      bgColor: "#d2d2d2",
+      textColor: "#000",
       links: [
         { label: "Email", ariaLabel: "Email us", href: "mailto:hello@company.com" },
         { label: "Twitter", ariaLabel: "Twitter", href: "https://twitter.com/company" },
@@ -67,7 +67,7 @@ const Navbar = () => {
         items={items}
         baseColor="#fff"
         className=""
-        menuColor="#fff"
+        menuColor="#000"
         ease="power3.out"
       />
     </div>
