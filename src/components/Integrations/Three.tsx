@@ -1,81 +1,136 @@
-import { Link, LogOutIcon, MessageCirclePlusIcon } from 'lucide-react'
 import React from 'react'
+import Link from 'next/link'
 import { Button } from '../ui/button'
 import { cn } from '@/lib/utils'
-import { GiEvilMinion } from 'react-icons/gi'
-import { PiReplitLogo } from 'react-icons/pi'
-import { SiVscodium } from 'react-icons/si'
-import { DiAws } from 'react-icons/di'
-import { BsGoogle } from 'react-icons/bs'
+import {
+  Code2,
+  Wrench,
+  GitCommit,
+  Server,
+  Database,
+  ShieldCheck,
+  PlayCircle,
+} from 'lucide-react'
+import Image from 'next/image'
 
 const Three = () => {
-    return (
+  return (
+    <div>
+      <section>
+        <div className="py-20 bg -muted md:py-28">
+          <div className="mx-auto px-6">
+            <div className="relative mx-auto flex max-w-md items-center justify-between">
+              {/* Left icon column */}
+              <div className="space-y-6">
+                <IntegrationCard position="left-top">
+                  <Wrench />
+                </IntegrationCard>
+                <IntegrationCard position="left-middle">
+                  <Code2 />
+                </IntegrationCard>
+                <IntegrationCard position="left-bottom">
+                  <GitCommit />
+                </IntegrationCard>
+              </div>
 
-        <section>
-            <div className="py-24 bg-muted md:py-32">
-                <div className="mx-auto max-w-5xl px-6">
-                    <div className="aspect-16/10 group relative mx-auto flex max-w-[22rem] items-center justify-between sm:max-w-sm">
-                        <div
-                            role="presentation"
-                            className="bg-linear-to-b border-foreground/5 absolute inset-0 z-10 aspect-square animate-spin items-center justify-center rounded-full border-t from-lime-500/15 to-transparent to-25% opacity-0 duration-[3.5s] group-hover:opacity-100 dark:from-white/5"></div>
-                        <div
-                            role="presentation"
-                            className="bg-linear-to-b border-foreground/5 absolute inset-16 z-10 aspect-square scale-90 animate-spin items-center justify-center rounded-full border-t from-blue-500/15 to-transparent to-25% opacity-0 duration-[3.5s] group-hover:opacity-100"></div>
-                        <div className="bg-linear-to-b from-muted-foreground/15 absolute inset-0 flex aspect-square items-center justify-center rounded-full border-t to-transparent to-25%">
-                            <IntegrationCard className="-translate-x-1/6 absolute left-0 top-1/4 -translate-y-1/4">
-                                <GiEvilMinion />
-                            </IntegrationCard>
-                            <IntegrationCard className="absolute top-0 -translate-y-1/2">
-                                <PiReplitLogo />
-                            </IntegrationCard>
-                            <IntegrationCard className="translate-x-1/6 absolute right-0 top-1/4 -translate-y-1/4">
-                                <MessageCirclePlusIcon />
-                            </IntegrationCard>
-                        </div>
-                        <div className="bg-linear-to-b from-muted-foreground/15 absolute inset-16 flex aspect-square scale-90 items-center justify-center rounded-full border-t to-transparent to-25%">
-                            <IntegrationCard className="absolute top-0 -translate-y-1/2">
-                                <SiVscodium />
-                            </IntegrationCard>
-                            <IntegrationCard className="absolute left-0 top-1/4 -translate-x-1/4 -translate-y-1/4">
-                                <DiAws />
-                            </IntegrationCard>
-                            <IntegrationCard className="absolute right-0 top-1/4 -translate-y-1/4 translate-x-1/4">
-                                <BsGoogle />
-                            </IntegrationCard>
-                        </div>
-                        <div className="absolute inset-x-0 bottom-0 mx-auto my-2 flex w-fit justify-center gap-2">
-                            <div className="bg-muted relative z-20 rounded-full border p-1">
-                                <IntegrationCard
-                                    className="shadow-black-950/10 dark:bg-background size-16 border-black/20 shadow-xl dark:border-white/25 dark:shadow-white/15"
-                                    isCenter={true}>
-                                    <LogOutIcon className="text-blue-500" />
-                                </IntegrationCard>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="bg-linear-to-t from-background relative z-20 mx-auto mt-12 max-w-lg space-y-6 from-55% text-center">
-                        <h2 className="text-balance text-3xl font-semibold md:text-4xl">Integrate with your favorite tools</h2>
-                        <p className="text-muted-foreground">Connect seamlessly with popular platforms and services to enhance your workflow.</p>
-
-                        <Button
-                            variant="outline"
-                            size="sm"
-                            asChild>
-                            <Link href="#">Get Started</Link>
-                        </Button>
-                    </div>
+              {/* Center icon */}
+              <div className="mx-auto my-2 flex w-fit justify-center gap-2">
+                <div className="bg-muted relative z-20 rounded-2xl border p-1">
+                  <IntegrationCard
+                    className="shadow-black-950/10 dark:bg-background size-16 border-black/25 shadow-xl dark:border-white/25 dark:shadow-white/10"
+                    isCenter={true}
+                  >
+                   <Image src={"/quzexIcon.png"} alt='quzex icon' width={100} height={100} className='brightness-0'/>
+                  </IntegrationCard>
                 </div>
+              </div>
+
+              {/* Dotted background accent */}
+              <div
+                role="presentation"
+                className="absolute inset-1/3 bg-[radial-gradient(var(--dots-color)_1px,transparent_1px)] opacity-50 [--dots-color:black] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] dark:[--dots-color:white]"
+              ></div>
+
+              {/* Right icon column */}
+              <div className="space-y-6">
+                <IntegrationCard position="right-top">
+                  <Server />
+                </IntegrationCard>
+                <IntegrationCard position="right-middle">
+                  <Database />
+                </IntegrationCard>
+                <IntegrationCard position="right-bottom">
+                  <ShieldCheck />
+                </IntegrationCard>
+              </div>
             </div>
-        </section>
-    )
+
+            {/* Step content */}
+            <div className="mx-auto mt-12 max-w-lg space-y-6 text-center">
+              <h2 className="text-balance text-3xl font-semibold md:text-4xl">
+                Development & Execution
+              </h2>
+              <p className="text-muted-foreground">
+                We build in focused sprints with code reviews, automated testing, and CI/CD.
+                Performance, security, and scalability are baked in—so every release is stable, fast,
+                and production-ready.
+              </p>
+
+              <Button variant="outline" size="sm" asChild>
+                <Link href="#development">Track Development</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
 }
 
 export default Three
 
-const IntegrationCard = ({ children, className, isCenter = false }: { children: React.ReactNode; className?: string; position?: 'left-top' | 'left-middle' | 'left-bottom' | 'right-top' | 'right-middle' | 'right-bottom'; isCenter?: boolean }) => {
-    return (
-        <div className={cn('relative z-30 flex size-12 rounded-full border bg-white shadow-sm shadow-black/5 dark:bg-white/5 dark:backdrop-blur-md', className)}>
-            <div className={cn('m-auto size-fit *:size-5', isCenter && '*:size-8')}>{children}</div>
-        </div>
-    )
+const IntegrationCard = ({
+  children,
+  className,
+  position,
+  isCenter = false,
+}: {
+  children: React.ReactNode
+  className?: string
+  position?:
+    | 'left-top'
+    | 'left-middle'
+    | 'left-bottom'
+    | 'right-top'
+    | 'right-middle'
+    | 'right-bottom'
+  isCenter?: boolean
+}) => {
+  return (
+    <div
+      className={cn(
+        'bg-background relative flex size-12 rounded-xl border dark:bg-transparent',
+        className
+      )}
+    >
+      <div className={cn('relative z-20 m-auto size-fit *:size-6', isCenter && '*:size-8')}>
+        {children}
+      </div>
+      {position && !isCenter && (
+        <div
+          className={cn(
+            'bg-linear-to-r to-muted-foreground/25 absolute z-10 h-px',
+            position === 'left-top' && 'left-full top-1/2 w-[130px] origin-left rotate-[25deg]',
+            position === 'left-middle' && 'left-full top-1/2 w-[120px] origin-left',
+            position === 'left-bottom' && 'left-full top-1/2 w-[130px] origin-left rotate-[-25deg]',
+            position === 'right-top' &&
+              'bg-linear-to-l right-full top-1/2 w-[130px] origin-right rotate-[-25deg]',
+            position === 'right-middle' && 'bg-linear-to-l right-full top-1/2 w-[120px] origin-right',
+            position === 'right-bottom' &&
+              'bg-linear-to-l right-full top-1/2 w-[130px] origin-right rotate-[25deg]'
+          )}
+        />
+      )}
+    </div>
+  )
 }

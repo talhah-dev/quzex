@@ -1,77 +1,116 @@
 "use client";
-import React, { useEffect, useRef } from "react";
-import CardNav from "./Reactbit/CardNav/CardNav";
+import React, { useEffect, useState } from 'react'
+import { Button } from './ui/button'
+import { cn } from '../lib/utils'
+import {  Menu, X } from 'lucide-react'
+import Link from 'next/link';
+import Image from 'next/image';
+
+const menuItems = [
+  { name: 'Home', href: '/' },
+  { name: 'About', href: '/about' },
+  { name: 'Project', href: '/project' },
+  { name: 'Contact Us', href: '/contact' },
+]
 
 const Navbar = () => {
-  const navbarRef = useRef<HTMLDivElement | null>(null);
-  const items = [
-    {
-      label: "About",
-      bgColor: "#f6f6f6",
-      textColor: "#000",
-      links: [
-        { label: "Company", ariaLabel: "About Company", href: "/about/company" },
-        { label: "Careers", ariaLabel: "About Careers", href: "/about/careers" },
-      ],
-    },
-    {
-      label: "Projects",
-      bgColor: "#f1f1f1",
-      textColor: "#000",
-      links: [
-        { label: "Featured", ariaLabel: "Featured Projects", href: "/projects/featured" },
-        { label: "Case Studies", ariaLabel: "Project Case Studies", href: "/projects/case-studies" },
-      ],
-    },
-    {
-      label: "Contact",
-      bgColor: "#d2d2d2",
-      textColor: "#000",
-      links: [
-        { label: "Email", ariaLabel: "Email us", href: "mailto:hello@company.com" },
-        { label: "Twitter", ariaLabel: "Twitter", href: "https://twitter.com/company" },
-        { label: "LinkedIn", ariaLabel: "LinkedIn", href: "https://linkedin.com/company/company" },
-      ],
-    },
-  ];
+
+  const [menuState, setMenuState] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
-    let prevScrollPos = window.scrollY;
-
     const handleScroll = () => {
-      const currentScrollPos = window.scrollY;
-      if (navbarRef.current) {
-        if (currentScrollPos > prevScrollPos) {
-          // Scrolling down → hide navbar
-          navbarRef.current.style.transform = "translateY(-9rem)";
-        } else {
-          // Scrolling up → show navbar
-          navbarRef.current.style.transform = "translateY(0%)";
-        }
-      }
-      prevScrollPos = currentScrollPos;
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+      setIsScrolled(window.scrollY > 50)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
-    <div
-      ref={navbarRef}
-      className="fixed top-0 left-0 w-full z-50 transition-transform duration-500"
-    >
-      <CardNav
-        logo={"/quzex.png"}
-        logoAlt="quzex"
-        items={items}
-        baseColor="#fff"
-        className=""
-        menuColor="#000"
-        ease="power3.out"
-      />
-    </div>
-  );
-};
+    <header>
+      <nav
+        data-state={menuState && 'active'}
+        className="fixed z-20 w-full px-2">
+        <div className={cn('mx-auto mt-2 max-w-6xl px-6 transition-all duration-300 lg:px-12', isScrolled && 'bg-background/50 max-w-4xl rounded-2xl border backdrop-blur-lg lg:px-5')}>
+          <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
+            <div className="flex w-full justify-between lg:w-auto">
+              <Link
+                href="/"
+                aria-label="home"
+                className="flex items-center space-x-2">
+                <Image width={100} height={100} src="/quzex.png" className='h-10 w-auto brightness-0' alt="" />
+              </Link>
 
-export default Navbar;
+              <button
+                onClick={() => setMenuState(!menuState)}
+                aria-label={menuState == true ? 'Close Menu' : 'Open Menu'}
+                className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden">
+                <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
+                <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
+              </button>
+            </div>
+
+            <div className="absolute inset-0 m-auto hidden size-fit lg:block">
+              <ul className="flex gap-8 text-sm">
+                {menuItems.map((item, index) => (
+                  <li key={index}>
+                    <Link
+                      href={item.href}
+                      className="text-accent-foreground block duration-150">
+                      <span>{item.name}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
+              <div className="lg:hidden">
+                <ul className="space-y-6 text-base">
+                  {menuItems.map((item, index) => (
+                    <li key={index}>
+                      <Link
+                        href={item.href}
+                        className="text-muted-foreground hover:text-accent-foreground block duration-150">
+                        <span>{item.name}</span>
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
+                <Button
+                  asChild
+                  variant="outline"
+                  size="sm"
+                  className={cn(isScrolled && 'lg:hidden')}>
+                  <Link href="/login">
+                    <span>Login</span>
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  size="sm"
+                  className={cn(isScrolled && 'lg:hidden')}>
+                  <Link href="/signup">
+                    <span>Sign Up</span>
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  size="sm"
+                  className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')}>
+                  <Link href="#">
+                    <span>Get Started</span>
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+  )
+}
+
+export default Navbar

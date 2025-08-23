@@ -4,6 +4,7 @@ import React, { ReactNode, useEffect } from 'react';
 import Lenis from 'lenis';
 import ClickSpark from '@/components/Reactbit/ClickSpark/ClickSpark';
 import Cookies from '@/components/Cookies';
+import Footer from '@/components/Footer';
 
 interface WrapperProps {
     children: ReactNode;
@@ -25,15 +26,16 @@ const WrapperLayout = ({ children, className }: WrapperProps) => {
     return (
         <div className={className}>
             <ClickSpark
-                sparkColor='#fff'
+                sparkColor='#000'
                 sparkSize={10}
                 sparkRadius={15}
                 sparkCount={8}
                 duration={400}
             >
                 <Navbar />
-                <Cookies />
+                {/* <Cookies /> */}
                 {children}
+                <Footer />
             </ClickSpark>
         </div>
     );

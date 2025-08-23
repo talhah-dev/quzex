@@ -24,6 +24,7 @@ import One from '@/components/Integrations/One';
 import Two from '@/components/Integrations/Two';
 import Three from '@/components/Integrations/Three';
 import Four from '@/components/Integrations/Four';
+import Testimonials from '@/components/Testimonials';
 
 const items = [
     {
@@ -61,7 +62,7 @@ const HomePage = () => {
         setValue(10000);
     }
     return (
-        <WrapperLayout className='relative pb-20'>
+        <WrapperLayout className='relative'>
             <div className="h-dvh overflow-hidden relative w-full flex items-center justify-center flex-col">
                 <div className="w-full absolute top-0 left-0 h-dvh">
                     <div style={{ width: '100%', height: '100vh', position: 'relative' }}>
@@ -194,7 +195,7 @@ const HomePage = () => {
                             }
                         />
                         <div className="md:px-5 px-2">
-                            <h2 className='text-zinc-800 mt-4 font-medium text-2xl'>Web Design</h2>
+                            <h2 className='text-zinc-800 mt-4 font-medium text-2xl'>Website Design</h2>
                             <p className='text-zinc-600 mt-1 line-clamp-3'>Whether you want to build a new website from scratch or redesign an old one, we customize our strategy to fit your particular requirements and objectives. We develop interactive websites by blending innovative designs with functionality. Our team ensures that every minor detail aligns with your brand and company. Elevate your online presence with our custom web design services.                            </p>
                         </div>
                     </div>
@@ -314,10 +315,10 @@ const HomePage = () => {
                 <InfiniteMenu items={items} />
             </div> */}
 
-            <div className="max-w-7xl grid md:grid-cols-2 grid-cols-1 w-full mx-auto md:mt-20 mt-10 pp-5 md:px-12">
-                <Three />
-                <Two />
+            <div className="max-w-7xl overflow-hidden grid md:grid-cols-2 grid-cols-1 w-full mx-auto md:mt-20 mt-10 pp-5 md:px-12">
                 <One />
+                <Two />
+                <Three />
                 <Four />
             </div>
 
