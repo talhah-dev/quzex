@@ -9,7 +9,8 @@ import Image from 'next/image';
 const menuItems = [
   { name: 'Home', href: '/' },
   { name: 'About', href: '/about' },
-  { name: 'Project', href: '/project' },
+  { name: 'Services', href: '/services' },
+  { name: 'Work', href: '/work' },
   { name: 'Contact Us', href: '/contact' },
 ]
 
@@ -100,7 +101,7 @@ const Navbar = () => {
                   asChild
                   size="sm"
                   className={cn(isScrolled ? 'lg:inline-flex' : 'hidden')}>
-                  <Link href="#">
+                  <Link href="/contact">
                     <span>Get Started</span>
                   </Link>
                 </Button>

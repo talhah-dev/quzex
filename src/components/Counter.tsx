@@ -29,7 +29,7 @@ export function AnimatedNumberInView() {
                 {values.map((val, i) => (
                     <div key={i} className="flex flex-col items-center text-center">
                         <AnimatedNumber
-                            className='inline-flex text-5xl font-medium text-zinc-800'
+                            className='inline-flex text-5xl font-semibold text-zinc-800'
                             springOptions={{
                                 bounce: 0,
                                 duration: 3000, // duration in ms

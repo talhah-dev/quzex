@@ -1,103 +1,185 @@
-"use client"
-import Image from "next/image"
-import Link from "next/link"
-import { IoIosArrowForward } from "react-icons/io"
-import { PiBuildings } from "react-icons/pi";
-import { IoMailOutline } from "react-icons/io5";
-import { MdOutlinePermPhoneMsg } from "react-icons/md";
-import { FaWhatsapp, FaLinkedinIn, FaInstagram, FaFacebookF } from "react-icons/fa";
-import { useState } from "react";
-import { BsArrowDown } from "react-icons/bs";
+"use client";
 
-const Footer = () => {
-    const [email, setEmail] = useState<string>("");
+import * as React from "react";
+import Link from "next/link";
+import { Separator } from "@/components/ui/separator";
+import { FaFacebook, FaInstagram, FaXTwitter, FaYoutube, FaWhatsapp } from "react-icons/fa6";
+import { Input } from "./ui/input";
+import { Button } from "./ui/button";
+import Image from "next/image";
 
-    const emailSubmitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-    };
-
+// Simple, static, responsive footer (no maps, no custom SVGs)
+export default function Footer() {
     return (
-        <>
-            <div className="md:mt-20 mt-10">
-                <div className="bg-zinc-100">
-                    <div className=" p-5 max-w-7xl w-full mx-auto">
-                        <footer className=" flex border-y justify-between lg:flex-row flex-col flex-wrap gap-14  py-10 border-[#ffffff18]">
-                            <div className="">
-                                <Link href={"/"} >
-                                    <Image src={"/quzex.png"} width={200} height={200} className="w-auto mx-auto h-10 md:mx-0 brightness-0" alt="Logo" />
+        <footer className="bg-background text-foreground md:pt-28 pt-14">
+
+            <section className="w-full">
+                <div className="mx-auto max-w-7xl px-6 py-10 md:px-8">
+                    <div className="grid items-start gap-6 md:grid-cols-2">
+                        {/* Left: Heading & description */}
+                        <div>
+                            <h2 className="text-2xl font-semibold tracking-tight">Subscribe to our newsletter</h2>
+                            <p className="mt-3 text-muted-foreground">
+                                Get the latest news and updates from our team.
+                            </p>
+                        </div>
+
+
+                        {/* Right: Input + Button and helper text */}
+                        <div className="w-full md:justify-self-end">
+                            <form onSubmit={(e) => e.preventDefault()} className="flex w-full items-center gap-3">
+                                <Input
+                                    type="email"
+                                    placeholder="Enter your email"
+                                    className="h-11 max-w-md"
+                                    required
+                                    aria-label="Email address"
+                                />
+                                <Button type="submit" className="h-11 px-6">
+                                    Subscribe
+                                </Button>
+                            </form>
+                            <p className="mt-3 text-sm text-muted-foreground">
+                                By subscribing, you agree to our {" "}
+                                <Link href="/privacy" className="underline underline-offset-4">
+                                    Privacy Policy
                                 </Link>
-
-                                <div className="flex text-zinc-600 items-center gap-6 md:mt-20 mt-8 justify-center md:justify-start">
-                                    <Link href={"http://wa.me/+923152666263"} target="_blank">
-                                        <FaWhatsapp size={26} className="hover:text-zinc-800 transition-all duration-500" />
-                                    </Link>
-                                    <Link href={"https://www.linkedin.com/"} target="_blank">
-                                        <FaLinkedinIn size={24} className="hover:text-zinc-800 transition-all duration-500" />
-                                    </Link>
-                                    <Link href={"https://www.instagram.com/"} target="_blank">
-                                        <FaInstagram size={24} className="hover:text-zinc-800 transition-all duration-500" />
-                                    </Link>
-                                    <Link href={"https://www.facebook.com/"} target="_blank">
-                                        <FaFacebookF size={23} className="hover:text-zinc-800 transition-all duration-500" />
-                                    </Link>
-                                </div>
-                                <div className="flex ">
-                                    <Link href={"/login"} className="hover:gap-5 transition-all duration-500 px-6 py-2 rounded-full border border-zinc-600 flex items-center gap-3 mt-4 text-zinc-800">
-                                        Sign In <BsArrowDown className="-rotate-90" />
-                                    </Link>
-                                </div>
-                            </div>
-
-                            <div className="flex md:gap-20 flex-wrap md:flex-row flex-col gap-8">
-                                <div className="xl:pr-20">
-                                    <h4 className="text-xl font-medium text-zinc-800">Quick Links</h4>
-                                    <ul className="mt-3.5 text-zinc-600 space-y-4">
-                                        <li><Link href={"/"} className="hover:underline">Home</Link></li>
-                                        <li><Link href={"/about"} className="hover:underline">About Us</Link></li>
-                                        <li><Link href={"/services"} className="hover:underline">Services</Link></li>
-                                        <li><Link href={"/project"} className="hover:underline">Projects</Link></li>
-                                        <li><Link href={"/contact"} className="hover:underline">Contact Us</Link></li>
-                                        <li><Link href={"/blog"} className="hover:underline">Blog</Link></li>
-                                    </ul>
-                                </div>
-                                <div className="">
-                                    <h4 className="text-xl font-medium text-zinc-800">Get In Touch</h4>
-                                    <ul className="mt-3.5 text-zinc-600 space-y-3">
-                                        <li className=" flex items-center gap-2"><PiBuildings size={18} />Pakistan, Karachi</li>
-                                        <li><Link href={"mailto:ezbrandbuilders@gmail.com"} className="hover:underline flex items-center gap-2"><IoMailOutline size={18} />quzex@gmail.com</Link></li>
-                                        <li><Link href={"tel:+923201091220"} className="hover:underline flex items-center gap-1.5"><MdOutlinePermPhoneMsg size={18} />+92 3152666263</Link></li>
-                                    </ul>
-                                </div>
-                                <form onSubmit={emailSubmitHandler}>
-                                    <h4 className="text-xl font-medium text-zinc-800 ">Subscribe us latest updates</h4>
-                                    <input
-                                        onChange={(e) => setEmail(e.target.value)}
-                                        value={email}
-                                        placeholder="abc@gmail.com"
-                                        type="email"
-                                        className="px-3 py-2 outline-0 text-zinc-800  rounded-lg border border-zinc-600 mt-3.5 w-full"
-                                    />
-                                    <div className="flex items-end justify-end mt-2">
-                                        <button className="bg-zinc-200 cursor-pointer px-4 py-1 rounded-full ">Submit</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </footer>
-                    </div>
-
-                    <div className="flex items-center text-zinc-600 max-w-7xl w-full lg:flex-row flex-col-reverse mx-auto px-5 gap-5 pb-5 justify-between">
-                        <p className="text-center">
-                            Copyright © 2025 <Link href={"/"} className="text-zinc-800 hover:underline transition-all duration-500">QUZEX</Link>. All rights reserved.
-                        </p>
-                        <div className="flex items-center ">
-                            <Link href={"/"} className="hover:text-zinc-800 transition-all duration-500 border-r border-[#ffffff21] pr-4">Privacy Policy</Link>
-                            <Link href={"/"} className="hover:text-zinc-800 transition-all duration-500 pl-4">Terms of Service</Link>
+                                .
+                            </p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </>
-    )
-}
+            </section>
 
-export default Footer
+            <div className="mx-auto max-w-7xl px-6 py-12 md:px-8">
+                {/* Top */}
+                <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
+                    {/* Address / Contact / Socials */}
+                    <div>
+                        {/* Logo placeholder */}
+                        <div className="">
+                            <Image src={"/quzexIcon.png"} className="bg-black p-1 rounded-lg "  width={50} height={50} alt="Logo" />
+                        </div>
+                        <div className="mt-6 space-y-6">
+                            <div>
+                                <h3 className="text-base font-semibold">Address:</h3>
+                                <p className="mt-2 text-sm text-muted-foreground">
+                                    Pakistan, Karachi
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3 className="text-base font-semibold">Contact:</h3>
+                                <div className="mt-2 space-y-1 text-sm text-muted-foreground">
+                                    <p>talha18513@gmail.com</p>
+                                    <p>03152666263</p>
+                                </div>
+                            </div>
+
+                            <div className="mt-4 flex items-center gap-5">
+                                <Link href="#" aria-label="Facebook" className="text-muted-foreground transition hover:text-foreground">
+                                    <FaFacebook className="h-6 w-6" />
+                                </Link>
+                                <Link href="#" aria-label="Instagram" className="text-muted-foreground transition hover:text-foreground">
+                                    <FaInstagram className="h-6 w-6" />
+                                </Link>
+                                <Link href="#" aria-label="X" className="text-muted-foreground transition hover:text-foreground">
+                                    <FaXTwitter className="h-6 w-6" />
+                                </Link>
+                                <Link href="#" aria-label="YouTube" className="text-muted-foreground transition hover:text-foreground">
+                                    <FaYoutube className="h-6 w-6" />
+                                </Link>
+                                <Link href="#" aria-label="WhatsApp" className="text-muted-foreground transition hover:text-foreground">
+                                    <FaWhatsapp className="h-6 w-6" />
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Link Columns */}
+                    <nav aria-label="Footer" className="grid grid-cols-1 gap-8 sm:grid-cols-3 md:col-span-3 md:grid-cols-3">
+                        <div>
+                            <h3 className="text-base font-semibold">Company</h3>
+                            <ul className="mt-4 space-y-3 text-sm">
+                                <li>
+                                    <Link href="/" className="text-muted-foreground transition hover:text-foreground">Home</Link>
+                                </li>
+                                <li>
+                                    <Link href="/about" className="text-muted-foreground transition hover:text-foreground">About Us</Link>
+                                </li>
+                                <li>
+                                    <Link href="#" className="text-muted-foreground transition hover:text-foreground">Blog</Link>
+                                </li>
+                                <li>
+                                    <Link href="/services" className="text-muted-foreground transition hover:text-foreground">Services</Link>
+                                </li>
+                                <li>
+                                    <Link href="/work" className="text-muted-foreground transition hover:text-foreground">Work</Link>
+                                </li>
+                                <li>
+                                    <Link href="/contact" className="text-muted-foreground transition hover:text-foreground">Contact</Link>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 className="text-base font-semibold">Resources</h3>
+                            <ul className="mt-4 space-y-3 text-sm">
+                                <li>
+                                    <Link href="#" className="text-muted-foreground transition hover:text-foreground">FAQ</Link>
+                                </li>
+                                <li>
+                                    <Link href="#" className="text-muted-foreground transition hover:text-foreground">Support</Link>
+                                </li>
+                                <li>
+                                    <Link href="#" className="text-muted-foreground transition hover:text-foreground">Blog</Link>
+                                </li>
+                                <li>
+                                    <Link href="#" className="text-muted-foreground transition hover:text-foreground">Careers</Link>
+                                </li>
+                                <li>
+                                    <Link href="#" className="text-muted-foreground transition hover:text-foreground">Partners</Link>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 className="text-base font-semibold">Account</h3>
+                            <ul className="mt-4 space-y-3 text-sm">
+                                <li>
+                                    <Link href="/signup" className="text-muted-foreground transition hover:text-foreground">Sign up</Link>
+                                </li>
+                                <li>
+                                    <Link href="/login" className="text-muted-foreground transition hover:text-foreground">Login</Link>
+                                </li>
+                                <li>
+                                    <Link href="/accessibility" className="text-muted-foreground transition hover:text-foreground">Accessibility</Link>
+                                </li>
+                                <li>
+                                    <Link href="/terms" className="text-muted-foreground transition hover:text-foreground">Terms</Link>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+
+                <Separator className="my-10" />
+
+                {/* Bottom bar */}
+                <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                    <p className="text-sm text-muted-foreground">
+                        Copyright © 2025 QUZEX. All rights reserved.
+                    </p>
+                    <ul className="flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
+                        <li>
+                            <Link href="/privacy" className="text-muted-foreground transition hover:text-foreground">Privacy Policy</Link>
+                        </li>
+                        <li>
+                            <Link href="/terms" className="text-muted-foreground transition hover:text-foreground">Terms of Service</Link>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    );
+}
