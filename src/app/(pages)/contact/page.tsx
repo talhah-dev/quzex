@@ -107,7 +107,7 @@ const Contact = () => {
 
                                         {/* Services */}
                                         <div className="space-y-3">
-                                            <p className="text-sm font-medium">I'm interested in…</p>
+                                            <p className="text-sm font-medium">Im interested in…</p>
                                             <div className="flex flex-wrap gap-3">
                                                 <button type="button" className="rounded-full border px-4 py-2 text-sm hover:bg-muted">Website Development</button>
                                                 <button type="button" className="rounded-full border px-4 py-2 text-sm hover:bg-muted">Mobile Application</button>

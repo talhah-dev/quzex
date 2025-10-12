@@ -141,7 +141,7 @@ export default function Work() {
                 <div className="mx-auto max-w-7xl px-5 md:px-10 pt-28 md:pt-40">
                     {/* Header */}
                     <header className="flex flex-col gap-2">
-                        <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">Work</h1>
+                        <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">Recent Work</h1>
                         <p className="max-w-2xl text-muted-foreground">
                             A selection of recent projects and case studies. Filter by tag or search by name, feature, or
                             industry.
@@ -150,7 +150,10 @@ export default function Work() {
 
                     {/* Controls */}
                     <div className="mt-6 md:mt-10 flex flex-col gap-10 sm:flex-row sm:items-center sm:justify-between">
-                        <div className="-mx-1 flex snap-x items-center gap-2 overflow-x-auto px-1 pb-1">
+                        <div
+                            className="-mx-1 flex snap-x items-center gap-2 overflow-x-auto px-1 pb-1 [scrollbar-width:none] [-ms-overflow-style:none]"
+                            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+                        >
                             {TAGS.map((t) => (
                                 <button
                                     key={t}
@@ -168,6 +171,7 @@ export default function Work() {
                                 </button>
                             ))}
                         </div>
+
 
                         {/* Search */}
                         <div className="relative w-full sm:w-80">
@@ -187,34 +191,26 @@ export default function Work() {
                             <article key={p.id} className="group overflow-hidden rounded-2xl ring-1 ring-border">
                                 <Link href={p.href} className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
                                     <div className="relative">
-                                        <AspectRatio ratio={16 / 10}>
+                                        <AspectRatio ratio={16 / 14}>
                                             <img
                                                 src={p.image}
                                                 alt={p.title}
                                                 className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
                                             />
                                         </AspectRatio>
-                                        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent p-4 pt-16">
-                                            <div className="mb-2 flex flex-wrap gap-2">
+                                        <div className=" p-4">
+                                            <h3 className="text-lg font-medium leading-snug">{p.title}</h3>
+                                            <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">{p.description}</p>
+                                            <div className="mt-2 flex flex-wrap gap-2">
                                                 {p.tags.map((t) => (
                                                     <Badge key={t} variant="secondary" className="rounded-full">
                                                         {t}
                                                     </Badge>
                                                 ))}
                                             </div>
-                                            <h3 className="text-lg font-semibold leading-snug">{p.title}</h3>
-                                            <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">{p.description}</p>
                                         </div>
                                     </div>
                                 </Link>
-                                <div className="flex items-center justify-between p-4">
-                                    <span className="text-xs text-muted-foreground">{p.year}</span>
-                                    <Button asChild variant="ghost" size="sm" className="gap-1">
-                                        <Link href={p.href}>
-                                            Case study <ArrowUpRight className="h-4 w-4" />
-                                        </Link>
-                                    </Button>
-                                </div>
                             </article>
                         ))}
                     </div>
