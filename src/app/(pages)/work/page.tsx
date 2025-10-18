@@ -8,6 +8,8 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { ArrowUpRight, Search as SearchIcon } from "lucide-react";
+import RecentWork from "@/components/RecentWork";
+import { projects } from "@/data/data";
 
 // Different design from Services: image-first showcase cards with overlay, chip filters, and search
 
@@ -118,6 +120,7 @@ const PROJECTS: Project[] = [
     },
 ];
 
+
 export default function Work() {
     const [activeTag, setActiveTag] = React.useState<Tag>("All");
     const [query, setQuery] = React.useState("");
@@ -186,32 +189,9 @@ export default function Work() {
                     </div>
 
                     {/* Grid (image-first overlay cards) */}
-                    <div className="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                        {filtered.map((p) => (
-                            <article key={p.id} className="group overflow-hidden rounded-2xl ring-1 ring-border">
-                                <Link href={p.href} className="block focus:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-                                    <div className="relative">
-                                        <AspectRatio ratio={16 / 14}>
-                                            <img
-                                                src={p.image}
-                                                alt={p.title}
-                                                className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
-                                            />
-                                        </AspectRatio>
-                                        <div className=" p-4">
-                                            <h3 className="text-lg font-medium leading-snug">{p.title}</h3>
-                                            <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">{p.description}</p>
-                                            <div className="mt-2 flex flex-wrap gap-2">
-                                                {p.tags.map((t) => (
-                                                    <Badge key={t} variant="secondary" className="rounded-full">
-                                                        {t}
-                                                    </Badge>
-                                                ))}
-                                            </div>
-                                        </div>
-                                    </div>
-                                </Link>
-                            </article>
+                    <div className="mt-8 grid grid-cols-1 gap-6 gap-y-20 sm:grid-cols-2 lg:grid-cols-3">
+                        {projects.map((p) => (
+                            <RecentWork key={p.imgSrc} {...p} />
                         ))}
                     </div>
 

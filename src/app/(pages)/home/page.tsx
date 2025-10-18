@@ -33,6 +33,48 @@ import { Building2, ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import RecentWork from '@/components/RecentWork';
+import ClientLogo from '@/components/ClientLogo';
+import { CLIENT_IMAGES } from '@/data/data';
+
+
+const projects = [
+    {
+        imgSrc: '/images/projects/img (18).jpg',
+        alt: 'Car rental & fleet booking website',
+        description:
+            'Car rental & fleet booking experience with instant pricing, insurance add-ons, and one-tap checkout.',
+    },
+    {
+        imgSrc: '/images/projects/img (34).jpg',
+        alt: 'Crypto trading platform',
+        description:
+            'Crypto trading dashboard with strategy bots, multi-exchange aggregation, and live portfolio tracking.',
+    },
+    {
+        imgSrc: '/images/projects/img (37).jpg',
+        alt: 'EdTech courses marketplace',
+        description:
+            'Course marketplace with curriculum pages, mentor profiles, and streamlined enrollment.',
+    },
+    {
+        imgSrc: '/images/projects/img (33).jpg',
+        alt: 'Virtual card / neobank landing',
+        description:
+            'Modern fintech landing for a virtual card—KYC onboarding, spend analytics, and secure wallet.',
+    },
+    {
+        imgSrc: '/images/projects/img (5).jpg',
+        alt: 'Creative / 3D studio site',
+        description:
+            '3D/animation studio portfolio with motion previews, case studies, and project brief form.',
+    },
+    {
+        imgSrc: '/images/projects/img (13).jpg',
+        alt: 'Burger restaurant ordering UI',
+        description:
+            'Restaurant ordering—rich menu, build-your-burger flow, cart, and pickup/delivery options.',
+    },
+]
 
 const items = [
     {
@@ -269,11 +311,12 @@ const HomePage = () => {
 
                     {/* Grid */}
                     <div className="mt-10 grid grid-cols-1 gap-5 gap-y-14 sm:grid-cols-2 md:grid-cols-3">
-                        <RecentWork />
-                        <RecentWork />
-                        <RecentWork />
-                        <RecentWork />
+                        {projects.map((p) => (
+                            <RecentWork key={p.imgSrc} {...p} />
+                        ))}
                     </div>
+
+
                 </div>
             </section>
 
@@ -288,81 +331,10 @@ const HomePage = () => {
                             <ChevronRight className="ml-1 inline-block size-3" />
                         </Link>
                     </div>
-                    <div className="group-hover:blur-xs mx-auto mt-12 grid max-w-2xl grid-cols-4 gap-x-12 gap-y-8 transition-all duration-500 group-hover:opacity-50 sm:gap-x-16 sm:gap-y-14">
-                        <div className="flex">
-                            <img
-                                className="mx-auto h-5 w-fit dark:invert"
-                                src="https://html.tailus.io/blocks/customers/nvidia.svg"
-                                alt="Nvidia Logo"
-                                height="20"
-                                width="auto"
-                            />
-                        </div>
-
-                        <div className="flex">
-                            <img
-                                className="mx-auto h-4 w-fit dark:invert"
-                                src="https://html.tailus.io/blocks/customers/column.svg"
-                                alt="Column Logo"
-                                height="16"
-                                width="auto"
-                            />
-                        </div>
-                        <div className="flex">
-                            <img
-                                className="mx-auto h-4 w-fit dark:invert"
-                                src="https://html.tailus.io/blocks/customers/github.svg"
-                                alt="GitHub Logo"
-                                height="16"
-                                width="auto"
-                            />
-                        </div>
-                        <div className="flex">
-                            <img
-                                className="mx-auto h-5 w-fit dark:invert"
-                                src="https://html.tailus.io/blocks/customers/nike.svg"
-                                alt="Nike Logo"
-                                height="20"
-                                width="auto"
-                            />
-                        </div>
-                        <div className="flex">
-                            <img
-                                className="mx-auto h-5 w-fit dark:invert"
-                                src="https://html.tailus.io/blocks/customers/lemonsqueezy.svg"
-                                alt="Lemon Squeezy Logo"
-                                height="20"
-                                width="auto"
-                            />
-                        </div>
-                        <div className="flex">
-                            <img
-                                className="mx-auto h-4 w-fit dark:invert"
-                                src="https://html.tailus.io/blocks/customers/laravel.svg"
-                                alt="Laravel Logo"
-                                height="16"
-                                width="auto"
-                            />
-                        </div>
-                        <div className="flex">
-                            <img
-                                className="mx-auto h-7 w-fit dark:invert"
-                                src="https://html.tailus.io/blocks/customers/lilly.svg"
-                                alt="Lilly Logo"
-                                height="28"
-                                width="auto"
-                            />
-                        </div>
-
-                        <div className="flex">
-                            <img
-                                className="mx-auto h-6 w-fit dark:invert"
-                                src="https://html.tailus.io/blocks/customers/openai.svg"
-                                alt="OpenAI Logo"
-                                height="24"
-                                width="auto"
-                            />
-                        </div>
+                    <div className="group-hover:blur-xs mx-auto mt-12 grid max-w-4xl xl:grid-cols-5 grid-cols-4 gap-x-12 gap-y-8 transition-all duration-500 group-hover:opacity-50 sm:gap-x-16 sm:gap-y-14">
+                        {CLIENT_IMAGES.slice(0,10).map((src, i) => (
+                            <ClientLogo key={src} src={src} index={i + 1} />
+                        ))}
                     </div>
                 </div>
             </section>
