@@ -303,10 +303,18 @@ const HomePage = () => {
 
             <section className="w-full bg-background text-foreground">
                 <div className="mx-auto max-w-7xl px-4 md:px-10 md:mt-24 mt-12">
-                    <div className="fle"></div>
-                    <div className="flex flex-col items-start gap-2">
-                        <h2 className="text-3xl font-semibold tracking-tight md:text-5xl">Recent Work</h2>
-                        <p className="max-w-2xl text-sm text-muted-foreground">A clean selection of websites and apps we recently shipped.</p>
+                    <div className="flex items-center justify-between">
+                        <div className="flex flex-col items-start gap-2">
+                            <h2 className="text-3xl font-semibold tracking-tight md:text-5xl">Recent Work</h2>
+                            <p className="max-w-2xl text-sm text-muted-foreground">A clean selection of websites and apps we recently shipped.</p>
+                        </div>
+                        <div className="">
+                            <Link href={"/work"}>
+                                <Button className='rounded-full'>
+                                    See More
+                                </Button>
+                            </Link>
+                        </div>
                     </div>
 
                     {/* Grid */}
@@ -332,7 +340,7 @@ const HomePage = () => {
                         </Link>
                     </div>
                     <div className="group-hover:blur-xs mx-auto mt-12 grid max-w-4xl xl:grid-cols-5 grid-cols-4 gap-x-12 gap-y-8 transition-all duration-500 group-hover:opacity-50 sm:gap-x-16 sm:gap-y-14">
-                        {CLIENT_IMAGES.slice(0,10).map((src, i) => (
+                        {CLIENT_IMAGES.slice(0, 10).map((src, i) => (
                             <ClientLogo key={src} src={src} index={i + 1} />
                         ))}
                     </div>

@@ -105,12 +105,13 @@ const About = () => {
                                     <div className="overflow-hidden rounded-2xl ring-1 ring-border/70">
                                         <AspectRatio ratio={16 / 12}>
                                             <img
-                                                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1400&auto=format&fit=crop"
+                                                src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1169"
                                                 alt="Website launch screenshot"
-                                                className="h-full w-full object-cover"
+                                                className="h-full w-full object-cover transform scale-x-[-1]"
                                             />
                                         </AspectRatio>
                                     </div>
+
                                 </div>
                             </div>
 
